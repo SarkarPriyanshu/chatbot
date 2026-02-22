@@ -1,0 +1,45 @@
+# ----------------------
+# Python artifacts
+# ----------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+
+# Virtual environments (just in case)
+extra/
+venv/
+.env
+.venv/
+
+# Python packaging
+*.egg-info/
+dist/
+build/
+*.egg
+
+# pip / uv files
+uv.lock
+uv-*.log
+
+# ----------------------
+# IDE / Editor
+# ----------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+
+# ----------------------
+# OS files
+# ----------------------
+.DS_Store
+Thumbs.db
+
+# ----------------------
+# Logs
+# ----------------------
+*.log
