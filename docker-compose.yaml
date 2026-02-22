@@ -1,0 +1,52 @@
+version: "3.9"
+
+services:
+  chatbot-agent:
+    build:
+      context: ./backend
+    container_name: backend
+    restart: always
+    environment:
+      PYTHONUNBUFFERED: 1
+      PYTHONDONTWRITEBYTECODE: 1
+      AGENT_ENV: development
+      # Database connection variables for Postgres
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: chatbot_db
+    ports:
+      - "8000:8000"  # FastAPI
+    volumes:
+      - ./app:/app  # optional for dev live reload
+    depends_on:
+      - postgres
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+  postgres:
+    image: postgres:15
+    container_name: chatbot-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: chatbot_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: frontend
+    ports:
+      - "5173:80"   # Serve built frontend
+    depends_on:
+      - chatbot-agent
+
+# Named volumes
+volumes:
+  chatbot_data:
+  postgres_data:
