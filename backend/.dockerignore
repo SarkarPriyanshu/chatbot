@@ -1,0 +1,38 @@
+# ----------------------
+# Python artifacts
+# ----------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+.venv/
+
+# Logs
+*.log
+
+# ----------------------
+# Git
+# ----------------------
+.git
+.gitignore
+
+# IDE / editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker-related (avoid copying local Docker files unnecessarily)
+docker-compose.override.yml

@@ -1,0 +1,11 @@
+arxiv
+fastapi
+langchain
+langgraph
+langchain-experimental
+langchain-postgres
+fastmcp-langchain-adaptor
+langchain_google_genai
+python-dotenv
+langgraph-checkpoint-postgres
+psycopg[binary,pool]
