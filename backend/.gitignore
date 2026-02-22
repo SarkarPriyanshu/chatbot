@@ -11,7 +11,7 @@ __pycache__/
 # Virtual environments (just in case)
 extra/
 venv/
-.env/
+.env
 .venv/
 
 # Python packaging
